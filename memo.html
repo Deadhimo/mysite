@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <header><p>Memotter</p></header>
+    <main>
+     <label class="noteForm"><input type="text" required></label>     
+     <button class="noteButton"type="submit">メモ</button>
+    </main>
+    <article>
+     <ul class="notedNote"></ul>
+    </article>
+  </body>
+  <script>
+    const noteForm = document.querySelector(".noteForm");
+    const notedNote = document.querySelector(".notedNote");
+    const noteButton = document.querySelector(".noteButton");
+    const article = document.querySelector("article")
+    function addNote(){
+      let noteText = noteForm.querySelector("input").value;
+      let newNote = document.createElement("li");
+      newNote.textContent = noteText;
+      notedNote.appendChild(newNote);
+
+    }
+    noteButton.addEventListener("click",addNote)
+
+  </script>
+</html>
